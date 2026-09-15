@@ -25,7 +25,9 @@ description: Use when downloading a WeChat Official Account article (微信公�
 
 ## Quick Start
 
-依赖由 uv 按脚本内联声明自动安装，无需手动 pip。PDF 复用系统 Chrome。
+**执行位置**：下列命令用相对路径 `scripts/...`，须先 `cd` 到本 SKILL.md 所在目录（本机安装为 `~/.claude/skills/echo-wechat-skill`）再运行；或把命令里的 `scripts/` 换成该目录的绝对路径。
+
+依赖由 uv 按脚本内联声明自动安装，无需手动 pip。PDF 复用系统 Chrome。`--format`/`--media`/`--out` 等所有选项对单篇、合集、批量三种模式通用。
 
 ```bash
 # 单篇 -> Markdown（默认）
