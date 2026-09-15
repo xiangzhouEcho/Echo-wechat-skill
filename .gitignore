@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+wechat-download/
+.selftest_out/
+wxselftest_*/
+*.mp4
+*.mp3
+*.m4a
