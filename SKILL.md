@@ -25,22 +25,24 @@ description: Use when downloading a WeChat Official Account article (微信公�
 
 ## Quick Start
 
-**执行位置**：下列命令用相对路径 `scripts/...`，须先 `cd` 到本 SKILL.md 所在目录（本机安装为 `~/.claude/skills/echo-wechat-skill`）再运行；或把命令里的 `scripts/` 换成该目录的绝对路径。
+**执行位置（重要）**：在**你希望产物落地的目录**运行（默认下载到当前目录下的 `wechat-download/`），并用**绝对路径**调用脚本——这样 `--out`、`--url-file` 等相对路径都相对你当前目录，脚本依赖也能就位。不要 `cd` 进 skill 目录（否则产物会落在 skill 目录里）。本机脚本绝对路径为 `~/.claude/skills/echo-wechat-skill/scripts/wechat_dl.py`。
 
 依赖由 uv 按脚本内联声明自动安装，无需手动 pip。PDF 复用系统 Chrome。`--format`/`--media`/`--out` 等所有选项对单篇、合集、批量三种模式通用。
 
 ```bash
+DL=~/.claude/skills/echo-wechat-skill/scripts/wechat_dl.py
+
 # 单篇 -> Markdown（默认）
-uv run scripts/wechat_dl.py "https://mp.weixin.qq.com/s/XXXX"
+uv run "$DL" "https://mp.weixin.qq.com/s/XXXX"
 
 # 单篇 -> 三种格式 + 图片/视频/音频全下
-uv run scripts/wechat_dl.py "https://mp.weixin.qq.com/s/XXXX" --format md,html,pdf --media all
+uv run "$DL" "https://mp.weixin.qq.com/s/XXXX" --format md,html,pdf --media all
 
 # 合集：链接需含 __biz 与 album_id
-uv run scripts/wechat_dl.py --album "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=XX==&action=getalbum&album_id=NNN"
+uv run "$DL" --album "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=XX==&action=getalbum&album_id=NNN"
 
 # 批量：每行一个链接
-uv run scripts/wechat_dl.py --url-file links.txt --format md,pdf
+uv run "$DL" --url-file links.txt --format md,pdf
 ```
 
 ## Options
@@ -90,5 +92,5 @@ Markdown 带 Obsidian frontmatter（title/author/account/account_id/biz/publishe
 ## Verify
 
 ```bash
-uv run scripts/selftest.py   # 离线自检，零网络
+uv run ~/.claude/skills/echo-wechat-skill/scripts/selftest.py   # 离线自检，零网络
 ```
