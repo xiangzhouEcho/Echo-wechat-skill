@@ -93,6 +93,14 @@ uv run scripts/selftest.py   # offline, no network
 | No PDF produced | Install Google Chrome, or use `--format md,html` |
 | freq control / rate limited | Increase `--delay`, retry later |
 
+## Echo WeChat Skill Family
+
+Three skills form a pipeline: **search → download → format & publish**.
+
+- [Echo-wechat-search-skill](https://github.com/xiangzhouEcho/Echo-wechat-search-skill) — search Official-Account articles by keyword, pipe straight to download
+- [Echo-wechat-skill](https://github.com/xiangzhouEcho/Echo-wechat-skill) — download articles without a certificate (single/album/batch; md/html/pdf + images/video/audio) · this repo
+- [Echo-md2wechat-skill](https://github.com/xiangzhouEcho/Echo-md2wechat-skill) — format & publish Markdown to WeChat (inline CSS + clipboard + draft API)
+
 ## License
 
 MIT © xiangzhouEcho

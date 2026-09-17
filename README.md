@@ -93,6 +93,14 @@ uv run scripts/selftest.py   # 离线，零网络
 | PDF 没生成 | 装 Google Chrome，或改用 `--format md,html` |
 | freq control / 提示频繁 | 调大 `--delay`，隔段时间再跑 |
 
+## Echo 微信技能族
+
+三个技能可组成流水线：**搜索 → 下载 → 排版发布**。
+
+- [Echo-wechat-search-skill](https://github.com/xiangzhouEcho/Echo-wechat-search-skill) — 关键词搜索公众号文章，可一键串联下载
+- [Echo-wechat-skill](https://github.com/xiangzhouEcho/Echo-wechat-skill) — 免证书下载文章（单篇/合集/批量，md/html/pdf + 图片/视频/音频） · 本仓库
+- [Echo-md2wechat-skill](https://github.com/xiangzhouEcho/Echo-md2wechat-skill) — Markdown 排版发布到公众号（内联样式 + 剪贴板 + 草稿 API）
+
 ## License
 
 MIT © xiangzhouEcho
